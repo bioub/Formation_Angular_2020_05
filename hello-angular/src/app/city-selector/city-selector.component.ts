@@ -13,7 +13,13 @@ export class CitySelectorComponent implements OnInit {
     Allemagne: ['Berlin', 'Munich'],
   };
 
-  countries = [];
+  // cities = [
+  //   {country: 'France', city: 'Paris'},
+  //   {country: 'France', city: 'Lyon'},
+  //   {country: 'France', city: 'Marseille'},
+  // ]
+
+  countries;
 
   selectedCountry = '';
   selectedCity = '';
@@ -27,4 +33,8 @@ export class CitySelectorComponent implements OnInit {
     console.log(this.countries);
   }
 
+  handleSelectCountry(country) {
+    this.selectedCountry = country;
+    this.selectedCity = '';
+  }
 }

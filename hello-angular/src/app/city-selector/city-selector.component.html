@@ -1,10 +1,24 @@
 <p>
-    Pays : 
-    <select></select>
+  Pays :
+  <select [ngModel]="selectedCountry" (ngModelChange)="handleSelectCountry($event)">
+    <option></option>
+    <option *ngFor="let country of countries">
+      {{ country }}
+    </option>
+  </select>
 </p>
+<p *ngIf="selectedCountry">
+  Ville :
+  <select [(ngModel)]="selectedCity">
+    <option></option>
+    <option *ngFor="let city of citiesMap[selectedCountry]">
+        {{ city }}
+      </option>
+  </select>
+</p>
+
 <p>
-    Ville :
-    <select></select>
+    Vous avez sélectionné : {{selectedCountry}} {{selectedCity}}
 </p>
 <!--
 1 / Utiliser ngFor pour créer autant d'options

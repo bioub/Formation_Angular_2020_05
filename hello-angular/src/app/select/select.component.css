@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  max-width: 200px;
+}
+
+.selected {
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.items {
+  border: 1px solid black;
+  position: relative;
+  top: -1px;
+}
+
+.item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.item.active {
+  background-color: lightblue;
+}

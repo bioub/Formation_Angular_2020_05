@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { ClockComponent } from './clock/clock.component';
 import { HelloComponent } from './hello/hello.component';
 import { CitySelectorComponent } from './city-selector/city-selector.component';
+import { SelectComponent } from './select/select.component';
+import { CounterComponent } from './counter/counter.component';
+import { TriStateButtonComponent } from './tri-state-button/tri-state-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClockComponent,
     HelloComponent,
-    CitySelectorComponent
+    CitySelectorComponent,
+    SelectComponent,
+    CounterComponent,
+    TriStateButtonComponent
   ],
   imports: [
     BrowserModule,
