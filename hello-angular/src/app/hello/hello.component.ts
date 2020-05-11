@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
 
+  prenom = 'Romain';
+
+  prenoms = ['Jean', 'Eric'];
+
   constructor() { }
 
   ngOnInit(): void {

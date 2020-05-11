@@ -1,1 +1,38 @@
-<p>hello works!</p>
+<!-- <div>
+    Prénom : <input type="text" [ngModel]="prenom" (ngModelChange)="prenom = $event">
+</div> -->
+<div>
+    Prénom : <input type="text" [(ngModel)]="prenom">
+</div>
+<!-- 
+    Banana in a box [()]
+    Syntaxe combiné :
+    - si property binding [] s'appelle prefix ex [ngModel]
+    - si event binding () s'appelle prefixChange ex (ngModelChange)
+    - si en property binding valeur et que la valeur $event remonte dans cette variable
+    alors on peut écrire [(prefix)]="variable"
+-->
+<!-- <div>
+    Prénom : <input type="text" [value]="prenom" (input)="prenom = $event.target.value">
+</div> -->
+<!--
+    const inputEl = document.querySelector('input');
+    inputEl.value = prenom; // sync
+    inputEl.addEventListener('input', ($event) => {
+        prenom = $event.target.value;d
+    });
+-->
+<p [ngClass]="{paragraphe: prenom === 'Romain'}">
+    Bonjour {{prenom}} !
+</p>
+
+<ng-template [ngIf]="prenom === 'Romain'">
+    <div>Vous avez saisi Romain</div>
+</ng-template>
+
+<div *ngIf="prenom === 'Romain'">Vous avez saisi Romain</div>
+
+<div>
+    Prénoms du tableau :
+    <p *ngFor="let prenom of prenoms"> {{ prenom }} </p>
+</div>

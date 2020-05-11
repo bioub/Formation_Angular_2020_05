@@ -5,6 +5,12 @@ import { Component } from '@angular/core';
   template: `
     <h2>Horloge</h2>
     <app-clock></app-clock>
+
+    <h2>Hello</h2>
+    <app-hello></app-hello>
+
+    <h2>Exercice</h2>
+    <app-city-selector></app-city-selector>
   `,
   styles: []
 })
