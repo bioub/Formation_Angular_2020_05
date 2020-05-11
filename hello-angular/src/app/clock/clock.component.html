@@ -1,0 +1,12 @@
+{{ now | date:'HH:mm:ss' }}
+
+<input class="clock-input" type="text" value="{{ now | date:'HH:mm:ss' }}">
+<input [className]="'clock-input'" type="text" [value]="now | date:'HH:mm:ss'">
+<!--
+    const inputEl = document.createElement('input');
+    inputEl.className = 'clock-input';
+    inputEl.setAttribute('type', 'text');
+    inputEl.value = datePipe(now, 'HH:mm:ss');
+-->
+
+<input type="checkbox" [checked]="aCocher">
