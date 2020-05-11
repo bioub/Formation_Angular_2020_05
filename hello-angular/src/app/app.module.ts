@@ -9,6 +9,7 @@ import { CitySelectorComponent } from './city-selector/city-selector.component';
 import { SelectComponent } from './select/select.component';
 import { CounterComponent } from './counter/counter.component';
 import { TriStateButtonComponent } from './tri-state-button/tri-state-button.component';
+import { KeysPipe } from './keys.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TriStateButtonComponent } from './tri-state-button/tri-state-button.com
     CitySelectorComponent,
     SelectComponent,
     CounterComponent,
-    TriStateButtonComponent
+    TriStateButtonComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
   Pays :
   <select [ngModel]="selectedCountry" (ngModelChange)="handleSelectCountry($event)">
     <option></option>
-    <option *ngFor="let country of countries">
+    <option *ngFor="let country of citiesMap | keys">
       {{ country }}
     </option>
   </select>
