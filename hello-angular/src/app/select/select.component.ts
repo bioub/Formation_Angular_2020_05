@@ -15,6 +15,8 @@ export class SelectComponent implements OnInit {
   // selectionnée au moment du clic
   // Dans App stocker cette valeur dans choice de façon à l'afficher
 
+  // 3 / Utiliser le Banana in a box [()] dans App
+
   items = ['Rouge', 'Vert', 'Bleu'];
   selected;
 
