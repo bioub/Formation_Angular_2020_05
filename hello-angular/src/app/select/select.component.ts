@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-select',
@@ -17,8 +17,10 @@ export class SelectComponent implements OnInit {
 
   // 3 / Utiliser le Banana in a box [()] dans App
 
-  items = ['Rouge', 'Vert', 'Bleu'];
-  selected;
+  @Input() items = ['Rouge', 'Vert', 'Bleu'];
+  @Input() selected;
+
+  @Output() selectedChange = new EventEmitter<string>();
 
   opened = false;
 
@@ -52,7 +54,8 @@ export class SelectComponent implements OnInit {
 
   handleSelect(item) {
     this.selected = item; 
-    this.opened = false
+    this.opened = false;
+    this.selectedChange.emit(item);
   }
 
 }

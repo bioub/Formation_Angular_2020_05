@@ -5,9 +5,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   templateUrl: "./tri-state-button.component.html",
   styleUrls: ["./tri-state-button.component.css"],
 })
-export class TriStateButtonComponent implements OnInit {
+export class TriStateButtonComponent {
   @Input() values = ["Oui", "Non", "Peut-être"];
-  @Input() selected: string;
+  
+  _selected: string;
+  @Input() set selected(selected: string) {
+    console.log('set selected',  this.values);
+    this._selected = selected;
+    this.selectedIndex = this.values.indexOf(selected);
+  }
 
   @Output() selectedChange = new EventEmitter<string>(); // Generic
 
@@ -17,19 +23,19 @@ export class TriStateButtonComponent implements OnInit {
     console.log("constructor", this.values);
   }
 
-  ngOnInit(): void {
-    console.log("ngOnInit", this.values);
+  // ngOnInit(): void {
+  //   console.log("ngOnInit", this.values);
 
-    if (!this.selected) {
-      return;
-    }
+  //   if (!this.selected) {
+  //     return;
+  //   }
 
-    if (!this.values.includes(this.selected)) {
-      throw new Error(`Values ${this.values} don't include ${this.selected}`);
-    }
+  //   if (!this.values.includes(this.selected)) {
+  //     throw new Error(`Values ${this.values} don't include ${this.selected}`);
+  //   }
 
-    this.selectedIndex = this.values.indexOf(this.selected);
-  }
+  //   this.selectedIndex = this.values.indexOf(this.selected);
+  // }
 
   next() {
     this.selectedIndex = (this.selectedIndex + 1) % this.values.length;

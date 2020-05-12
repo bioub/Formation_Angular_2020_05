@@ -2,8 +2,10 @@
     Prénom : <input type="text" [ngModel]="prenom" (ngModelChange)="prenom = $event">
 </div> -->
 <div>
-    Prénom : <input type="text" [(ngModel)]="prenom">
+    Prénom : <input type="text" [(ngModel)]="prenom" #ngModelPrenom="ngModel">
 </div>
+
+Prénom saisi : {{ngModelPrenom.value}}
 <!-- 
     Banana in a box [()]
     Syntaxe combiné :

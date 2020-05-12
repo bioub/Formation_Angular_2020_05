@@ -1,0 +1,14 @@
+<form (submit)="handleSubmit()">
+  <input name="title" [(ngModel)]="todo.title" #inputEl #ngModelTitle="ngModel" />
+  <!-- const inputEl = document.querySelector('input'); -->
+  <button>+</button>
+</form>
+
+
+<div *ngIf="ngModelTitle.value else templateElse">
+  Valeur saisie : {{inputEl.value}} {{ngModelTitle.value}}
+</div>
+
+<ng-template #templateElse>
+  Vous n'avez encore saisi de valeur
+</ng-template>

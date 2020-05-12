@@ -10,6 +10,8 @@ import { SelectComponent } from './select/select.component';
 import { CounterComponent } from './counter/counter.component';
 import { TriStateButtonComponent } from './tri-state-button/tri-state-button.component';
 import { KeysPipe } from './keys.pipe';
+import { TabsComponent } from './tabs/tabs.component';
+import { TabComponent } from './tab/tab.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { KeysPipe } from './keys.pipe';
     SelectComponent,
     CounterComponent,
     TriStateButtonComponent,
-    KeysPipe
+    KeysPipe,
+    TabsComponent,
+    TabComponent
   ],
   imports: [
     BrowserModule, // import CommonModule caché
