@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectComponent implements OnInit {
 
+  // Exercice
+  // 1 / items et selected soient des Input
+  // et qu'elles recoivent de App choices et choice respectivement
+
+  // 2 / Créer un ouput selectedChange et emettre la valeur
+  // selectionnée au moment du clic
+  // Dans App stocker cette valeur dans choice de façon à l'afficher
+
   items = ['Rouge', 'Vert', 'Bleu'];
   selected;
 
@@ -20,6 +28,24 @@ export class SelectComponent implements OnInit {
     }
 
     this.selected = this.selected ?? this.items[0];
+
+    // ?? Nullish Coalescing operator
+    // Nouveaute de TypeScript 3.7 et de ECMAScript 2020
+
+    // Ressemble au ||
+    // this.selected = this.selected || this.items[0];
+    // Affecter la 2e valeur si la première est falsy
+    // falsy : false, 0, '', null, undefined
+    // 'Rouge' || 'Rouge' => 'Rouge'
+    // '' || 'Rouge' => 'Rouge'
+    // undefined || 'Rouge' => 'Rouge'
+
+    // this.selected = this.selected ?? this.items[0];
+    // Affecter la 2e valeur si la première est nullish
+    // nullish : null, undefined
+    // 'Rouge' || 'Rouge' => 'Rouge'
+    // '' || 'Rouge' => ''
+    // undefined || 'Rouge' => 'Rouge'
   }
 
   handleSelect(item) {

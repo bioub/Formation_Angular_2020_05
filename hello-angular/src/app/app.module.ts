@@ -23,7 +23,7 @@ import { KeysPipe } from './keys.pipe';
     KeysPipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, // import CommonModule caché
     FormsModule,
   ],
   providers: [],
