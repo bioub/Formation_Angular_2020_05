@@ -1,4 +1,12 @@
-import { Component, OnInit, OnDestroy, OnChanges, Input, SimpleChanges, DoCheck } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  OnChanges,
+  Input,
+  SimpleChanges,
+  DoCheck,
+} from "@angular/core";
 
 @Component({
   selector: "app-clock",
@@ -22,18 +30,22 @@ export class ClockComponent implements OnInit, OnChanges, OnDestroy, DoCheck {
     this.interval = setInterval(() => {
       this.now = new Date();
     }, this.delay);
-    console.log('ngOnInit');
+    console.log("ngOnInit");
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.delay.firstChange) {
+    if (
+      changes.delay.firstChange &&
+      changes.delay.currentValue === changes.delay.previousValue
+    ) {
       return;
     }
     clearInterval(this.interval);
     this.interval = setInterval(() => {
       this.now = new Date();
     }, this.delay);
-    console.log('ngOnChanges', changes);
+
+    console.log("ngOnChanges", changes);
   }
 
   ngOnDestroy() {
@@ -41,6 +53,6 @@ export class ClockComponent implements OnInit, OnChanges, OnDestroy, DoCheck {
   }
 
   ngDoCheck() {
-    console.log('detectChanges Clock');
+    console.log("detectChanges Clock");
   }
 }

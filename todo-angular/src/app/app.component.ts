@@ -18,10 +18,17 @@ export class AppComponent {
   }];
 
   addTodo(todo) {
-    this.todos.unshift(todo);
+    // Changement muable (mutable)
+    // this.todos.unshift(todo);
+
+    // Changement immuable (immutable)
+    this.todos = [
+      todo,
+      ...this.todos, // SPREAD tableau ES2015
+    ];
   }
 
   removeTodo(todo) {
-    
+
   }
 }

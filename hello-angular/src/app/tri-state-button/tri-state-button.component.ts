@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 export class TriStateButtonComponent {
   @Input() values = ["Oui", "Non", "Peut-être"];
   
-  _selected: string;
+  private _selected: string;
   @Input() set selected(selected: string) {
     console.log('set selected',  this.values);
     this._selected = selected;

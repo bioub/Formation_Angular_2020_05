@@ -10,6 +10,8 @@ export class TabsComponent implements OnInit, AfterContentInit {
 
   @ContentChildren(TabComponent) tabs!: QueryList<TabComponent>;
 
+  activeTab;
+
   titles: string[];
 
   constructor() { }

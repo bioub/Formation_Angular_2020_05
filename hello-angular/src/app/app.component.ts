@@ -54,6 +54,8 @@ import { Component } from '@angular/core';
       <app-tab title="Onglet 3">Contenu onglet 3</app-tab>
       <app-tab title="Onglet 4">Contenu onglet 4</app-tab>
     </app-tabs>
+
+    <!--<app-button>Click moi</app-button>-->
   `,
   styles: []
 })
