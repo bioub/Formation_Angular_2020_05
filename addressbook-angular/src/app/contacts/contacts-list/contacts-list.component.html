@@ -1,12 +1,9 @@
 <ul>
-  <li>
-    <a routerLink="/contacts/123">Jean Dupont</a>
-  </li>
-  <li>
-    <a routerLink="/contacts/456">Eric Martin</a>
+  <li *ngFor="let c of contacts">
+    <a [routerLink]="c.id">{{c.name}}</a>
   </li>
 </ul>
 
 <p>
-  <a routerLink="/contacts/add">Ajouter</a>
+  <a routerLink="add">Ajouter</a>
 </p>

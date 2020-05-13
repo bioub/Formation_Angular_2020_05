@@ -9,6 +9,9 @@ import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './core/about/about.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { ContactsModule } from './contacts/contacts.module';
+import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule, HttpClientJsonpModule, HttpClientXsrfModule } from '@angular/common/http';
+// import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { ContactsModule } from './contacts/contacts.module';
     NotFoundComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, // défini le provider de Title
+    HttpClientModule, // défini le provider de HttpClient
     ContactsModule,
     AppRoutingModule, // ! déclare la route ** pour les NotFound
     SharedModule, // import les composants/directives/pipes exportés pour les rendre accessibles
