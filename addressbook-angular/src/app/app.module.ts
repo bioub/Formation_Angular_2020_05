@@ -9,7 +9,8 @@ import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './core/about/about.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { ContactsModule } from './contacts/contacts.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ContactService } from './contacts/shared/contact.service';
 // import { HttpClientModule, HttpClientJsonpModule, HttpClientXsrfModule } from '@angular/common/http';
 // import { HttpClientTestingModule } from '@angular/common/http/testing';
 
@@ -29,7 +30,30 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule, // import les composants/directives/pipes exportés pour les rendre accessibles
     // dans les templates de ce module (ici AppComponent)
   ],
-  providers: [],
+  providers: [
+    // Tout est injectable, ex new ContactService(httpClient)
+    // {
+    //   provide: ContactService,
+    //   useClass: ContactService,
+    // }
+    // {
+    //   provide: ContactService,
+    //   useFactory(httpClient: HttpClient) {
+    //     return new ContactService(httpClient, 'https://jsonplaceholder.typicode.com');
+    //   }
+    // }
+    // {
+    //   provide: ContactService,
+    //   useValue: {
+    //     getAll() {
+    //       return [{
+    //         id: 123,
+    //         name: 'ABC'
+    //       }]
+    //     }
+    //   }
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

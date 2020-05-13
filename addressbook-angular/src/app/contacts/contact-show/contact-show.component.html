@@ -1,3 +1,14 @@
-<p>Name : Jean Dupont</p>
-<p>Email : jd@gmail.com</p>
-<p>Phone : 01 23 45 67 89</p>
+<!-- <p>Name : {{contact && contact.name}}</p>
+<p>Email : {{contact && contact.email}}</p>
+<p>Phone : {{contact && contact.phone}}</p> -->
+<!-- <p>Name : {{contact?.name}}</p>
+<p>Email : {{contact?.email}}</p>
+<p>Phone : {{contact?.phone}}</p> -->
+
+<h2>Contact show</h2>
+
+<ng-container *ngIf="contact">
+  <p>Name : {{contact.name}}</p>
+  <p>Email : {{contact.email}}</p>
+  <p>Phone : {{contact.phone}}</p>
+</ng-container>

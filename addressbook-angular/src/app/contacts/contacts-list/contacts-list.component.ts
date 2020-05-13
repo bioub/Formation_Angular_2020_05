@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { Contact } from '../shared/contact';
+import { ContactService } from '../shared/contact.service';
 
 @Component({
   selector: 'app-contacts-list',
@@ -19,11 +20,11 @@ export class ContactsListComponent implements OnInit {
 
   contacts: Contact[] = [];
 
-  constructor(private title: Title, private httpClient: HttpClient) {}
+  constructor(private title: Title, private contactService: ContactService) {}
 
   ngOnInit(): void {
     this.title.setTitle('Contacts List');
-    this.httpClient.get<Contact[]>('https://jsonplaceholder.typicode.com/users')
+    this.contactService.getAll()
       .subscribe((contacts) => {
         this.contacts = contacts;
       });

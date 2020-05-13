@@ -7,6 +7,17 @@ import { Todo } from './todo';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  // Exercice
+  // Générer un service Todo
+  // Dans ce service ajouter une méthode getAll comme
+  // dans ContactService
+  // URL : https://jsonplaceholder.typicode.com/todos
+
+  // Injecter ce service dans AppComponent via le constructeur
+
+  // Dans le ngOnInit appeler getAll et les stocker dans le tableau
+
   todos: Todo[] = [{
     title: 'ABC',
     completed: false,
