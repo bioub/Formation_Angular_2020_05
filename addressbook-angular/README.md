@@ -7,7 +7,7 @@
 * contact-add
 * contact-show
 
-## Créer 4 routes dans ContactsRoutingModule :
+## Créer 3 routes dans ContactsRoutingModule :
 
 * /contacts -> ContactsListComponent
 * /contacts/add -> ContactAddComponent

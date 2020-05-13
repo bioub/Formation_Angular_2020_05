@@ -8,6 +8,7 @@ import { TopBarComponent } from './core/top-bar/top-bar.component';
 import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './core/about/about.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
+import { ContactsModule } from './contacts/contacts.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    ContactsModule,
+    AppRoutingModule, // ! déclare la route ** pour les NotFound
     SharedModule, // import les composants/directives/pipes exportés pour les rendre accessibles
     // dans les templates de ce module (ici AppComponent)
   ],
