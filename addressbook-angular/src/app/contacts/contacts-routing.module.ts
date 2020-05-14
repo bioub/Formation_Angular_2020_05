@@ -22,7 +22,7 @@ const routes: Routes = [{
   component: ContactsComponent, // dans son template <router-outlet>
   children: [
     {
-      path: 'add',
+      path: 'add',  // URL Complète : /contacts/add
       component: ContactAddComponent,
     }, {
       path: ':contactId',

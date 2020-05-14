@@ -7,5 +7,6 @@ import { ClockComponent } from './clock/clock.component';
   declarations: [ClockComponent],
   imports: [CommonModule],
   exports: [CommonModule, FormsModule, ClockComponent],
+
 })
 export class SharedModule {}

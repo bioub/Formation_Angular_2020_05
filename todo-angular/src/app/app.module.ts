@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ItemComponent } from './item/item.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
   ],
   providers: [],

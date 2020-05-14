@@ -32,6 +32,7 @@ import { ContactService } from './contacts/shared/contact.service';
   ],
   providers: [
     // Tout est injectable, ex new ContactService(httpClient)
+    // ContactService
     // {
     //   provide: ContactService,
     //   useClass: ContactService,
@@ -54,6 +55,6 @@ import { ContactService } from './contacts/shared/contact.service';
     //   }
     // }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

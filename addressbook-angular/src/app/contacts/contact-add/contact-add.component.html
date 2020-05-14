@@ -1,8 +1,14 @@
-<form>
-  <p>Name : <input></p>
-  <p>Email : <input type="email"></p>
-  <p>Phone : <input type="tel"></p>
+<form (submit)="ngForm.valid && handleSubmit()" #ngForm="ngForm" [ngClass]="{submitted: ngForm.submitted}">
+  <!-- <-- directive ngForm -->
   <p>
+    Name :
+    <input name="name" [(ngModel)]="contact.name" required #ngModelName="ngModel" />
+    <span *ngIf="ngModelName.invalid && (ngModelName.touched || ngForm.submitted)">Le nom est obligatoire</span>
+  </p>
+  <p>Email : <input name="email" type="email" [(ngModel)]="contact.email" email /></p>
+  <p>Phone : <input name="phone" type="tel" [(ngModel)]="contact.phone" /></p>
+  <p>
+    <!-- <button [disabled]="ngForm.invalid">Add</button> -->
     <button>Add</button>
   </p>
 </form>

@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Todo } from './todo';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'todo-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   // Exercice
   // Générer un service Todo
@@ -27,6 +28,14 @@ export class AppComponent {
     completed: true,
     id: 456,
   }];
+
+  constructor(private todoService: TodoService) {}
+
+  ngOnInit() {
+    this.todoService.getAll().subscribe((todos) => {
+      this.todos = [...this.todos, ...todos];
+    });
+  }
 
   addTodo(todo) {
     // Changement muable (mutable)
