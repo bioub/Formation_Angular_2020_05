@@ -11,6 +11,7 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { ContactsModule } from './contacts/contacts.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ContactService } from './contacts/shared/contact.service';
+import { providers } from './providers';
 // import { HttpClientModule, HttpClientJsonpModule, HttpClientXsrfModule } from '@angular/common/http';
 // import { HttpClientTestingModule } from '@angular/common/http/testing';
 
@@ -30,31 +31,7 @@ import { ContactService } from './contacts/shared/contact.service';
     SharedModule, // import les composants/directives/pipes exportés pour les rendre accessibles
     // dans les templates de ce module (ici AppComponent)
   ],
-  providers: [
-    // Tout est injectable, ex new ContactService(httpClient)
-    // ContactService
-    // {
-    //   provide: ContactService,
-    //   useClass: ContactService,
-    // }
-    // {
-    //   provide: ContactService,
-    //   useFactory(httpClient: HttpClient) {
-    //     return new ContactService(httpClient, 'https://jsonplaceholder.typicode.com');
-    //   }
-    // }
-    // {
-    //   provide: ContactService,
-    //   useValue: {
-    //     getAll() {
-    //       return [{
-    //         id: 123,
-    //         name: 'ABC'
-    //       }]
-    //     }
-    //   }
-    // }
-  ],
+  providers: providers, // BUG @angular/cli
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Contact } from './contact';
 import { delay } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -17,13 +18,13 @@ export class ContactService {
 
   getAll() {
     return this.httpClient.get<Contact[]>(
-      'https://jsonplaceholder.typicode.com/users'
+      environment.backendUrl + '/users'
     );
   }
 
   getById(id) {
     const request$ = this.httpClient.get<Contact>(
-      'https://jsonplaceholder.typicode.com/users/' + id
+      environment.backendUrl + '/users/' + id
     );
 
     if (id === '2') {
@@ -38,7 +39,7 @@ export class ContactService {
 
   create(contact) {
     return this.httpClient.post<Contact>(
-      'https://jsonplaceholder.typicode.com/users',
+      environment.backendUrl + '/users',
       contact
     );
   }

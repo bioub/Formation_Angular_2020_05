@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, DoCheck } from '@angular/core';
 import { Todo } from '../todo';
 
 @Component({
@@ -7,7 +7,7 @@ import { Todo } from '../todo';
   styleUrls: ['./list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, DoCheck {
 
   @Input() items: Todo[];
 
